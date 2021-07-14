@@ -26,7 +26,7 @@ HYPERPARAMETERS = {"classification": {"n_tasks": 1, "graph_conv_layers": [128, 6
 
 path_to_data = "logS_logP_dataset.sdf"
 valuename = "logS"
-source_fold_folder = ""
+source_fold_folder = "./Donor_models/Chembl_models/regression_Chembl_data_bin_logP_2020_07_16_21_44_36"
 output_folder = "./Output"
 mode = "regression"
 
