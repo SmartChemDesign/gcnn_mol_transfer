@@ -8,7 +8,7 @@ dependencies:
   - seaborn
   - keras
   - matplotlib==3.1.0
-  - scikit-learn
+  - scikit-learn==0.21
   - deepchem==2.3.0
   - tensorflow-gpu=1.14
   - plotly
