@@ -28,5 +28,7 @@ Additional model hyperparameters can be modified via HYPERPARAMETERS dictionary 
 For transfer learning one should uncomment line
 > trainer.restore_model_params(source_fold_folder, layers_to_freeze=["graph_conv"])
 
+If you use this code, cite this paper https://doi.org/10.1021/acs.jpclett.1c02477
+
 
 
