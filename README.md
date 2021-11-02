@@ -1,16 +1,28 @@
-# gcnn_mol_transfer
+# gcnn_transfer_learning
 
 This package provides tools for training graph convolutional models for molecules using 
-transfer learning techniques. 
+transfer learning techniques.
 
-All necessary packages can be install via [Anaconda](https://anaconda.org/)
+[![alt text](https://pubs.acs.org/na101/home/literatum/publisher/achs/journals/content/jpclcd/2021/jpclcd.2021.12.issue-38/acs.jpclett.1c02477/20210923/images/medium/jz1c02477_0007.gif)](https://doi.org/10.1021/acs.jpclett.1c02477)
+## Installation
 
-List of packages presented in **requirements.yml**
-
+Use [conda](https://conda.io/projects/conda/en/latest/index.html) to install requirements presented in **nb_deepchem_gpu.yml**
+```bash
+conda env create -f nb_deepchem_gpu.yml
+```
+## Usage
 Training process carried out with **run_train.py** through TransferTrainer object. All training features are
 controlled by several flags in trainer object. Transfer training carried out by adding path to folder of 
-pretrained model. 
+pretrained model. Input data samples are presented in **Datasets**
 
+Flags for transfer training
+```python
+restore_folder=source_fold_folder, layers_to_freeze=["graph_conv"]
+```
+
+Flags for hyperopt optimization:
+
+    hyperopt=True, hyperopt_evals=100
 
 There are several mandatory input for TransferTrainer class init
 
@@ -21,14 +33,8 @@ There are several mandatory input for TransferTrainer class init
     output_folder - path to folder where TransferTrainer will create dir with all training results
     mode - classification or regression based on target property, multiclass not implemented
 
-Sample data samples are presented in **Datasets** and donor model in **Donor_models**
+## Citation
+If you use this code in your research, please cite this paper [Size Doesn’t Matter: Predicting Physico- or Biochemical Properties Based on Dozens of Molecules](https://doi.org/10.1021/acs.jpclett.1c02477)
 
-Additional model hyperparameters can be modified via HYPERPARAMETERS dictionary in **run_train.py**.
-
-For transfer learning one should uncomment line
-> trainer.restore_model_params(source_fold_folder, layers_to_freeze=["graph_conv"])
-
-If you use this code, cite this paper https://doi.org/10.1021/acs.jpclett.1c02477
-
-
-
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
